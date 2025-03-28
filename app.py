@@ -11,10 +11,24 @@ while x != "Exit":
             def flashcards(self):
                 return f"{self.key}:{self.value}"
             
+            def to_dict(self):
+                return{"key": self.key, "value": self.value}
+            
         words = Teacher(input("Give me a word: "), input("Give me an answer: "))
-        flashcards_data = [word.to_dict() for word in words]
         try:
             with open("flashcards.json", "r") as file:
-                words = json.load(file)
+                flashcards_data = json.load(file)
         except FileNotFoundError:
             flashcards_data = []
+
+        flashcards_data.append(words.to_dict())
+        
+        with open("flashcards.json", "w") as file:
+            json.dump(flashcards_data, file, indent=4)
+
+        x = input("Teacher or Student or Exit?: ")
+
+    if x == "Student":
+        class Student:
+            def __init__(self):
+                
