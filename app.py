@@ -15,6 +15,7 @@ while x != "Exit":
                 return{"key": self.key, "value": self.value}
             
         words = Teacher(input("Give me a word: "), input("Give me an answer: "))
+        
         try:
             with open("flashcards.json", "r") as file:
                 flashcards_data = json.load(file)
@@ -27,8 +28,8 @@ while x != "Exit":
             json.dump(flashcards_data, file, indent=4)
 
         x = input("Teacher or Student or Exit?: ")
-
+""" 
     if x == "Student":
         class Student:
             def __init__(self):
-                
+                 """
