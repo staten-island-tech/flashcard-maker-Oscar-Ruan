@@ -1,6 +1,56 @@
 import json
 x = input("Teacher or Student or Exit?: ")
 
+class Flashcards:
+    def __init__(self, phrase, answer):
+        self.phrase= phrase
+        self.answer= answer
+
+        def flashcards(self):
+            return f"{self.phrase}:{self.answer}"
+        
+        def to_dict(self):
+            return{"question": self.phrase, "answer": self.answer}
+        
+class Teacher(Flashcards):
+            
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"""         
+
 while x != "Exit":
     if x == "Teacher":
         class Teacher:
@@ -28,7 +78,7 @@ while x != "Exit":
             json.dump(flashcards_data, file, indent=4)
 
         x = input("Teacher or Student or Exit?: ")
-""" 
+
     if x == "Student":
         class Student:
             def __init__(self):
