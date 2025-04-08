@@ -23,7 +23,7 @@ while x != "Exit":
                 self.answer= answer
 
 
-        x = Flashcards(input("Give me a word: "), input("Give me an answer: "))
+        a = Flashcards(input("Give me a word: "), input("Give me an answer: "))
 
         try:
             with open("flashcards.json", "r") as file:
@@ -31,14 +31,33 @@ while x != "Exit":
         except FileNotFoundError:
             flashcard_data = []
 
-        flashcard_data.append(x.to_dict())
+        flashcard_data.append(a.to_dict())
 
         with open("flashcards.json", "w") as file:
             json.dump(flashcard_data, file, indent=4)
 
         x = input("What mode, Teacher, Student, or Exit?")
     
-"""     elif x == "Student":
+    elif x == "Student":
+        Flashcard = open("./flashcards.json", encoding="utf8")
+        data = json.load(Flashcard)
+
         class Student:
             def __init__(self, tally):
- """
+                self.tally= tally
+            
+            def streak(self):
+                return f"tally"
+        
+        y = input("continue? ")
+
+        while y == "yes":
+            for cards in data:
+                print(cards["question"])
+                b = input("what is the answer? ")
+                if b == (cards["answer"]):
+                    print("correct")
+                    play = play + 1
+                    y = input("continue?")
+        else:
+            break
