@@ -1,6 +1,7 @@
 import json
 
 x = input("What mode, Teacher, Student, or Exit?")
+play = 0
 
 class Flashcards:
     def __init__(self, phrase, answer):
@@ -41,13 +42,6 @@ while x != "Exit":
     elif x == "Student":
         Flashcard = open("./flashcards.json", encoding="utf8")
         data = json.load(Flashcard)
-
-        class Student:
-            def __init__(self, tally):
-                self.tally= tally
-            
-            def streak(self):
-                return f"tally"
         
         y = input("continue? ")
 
