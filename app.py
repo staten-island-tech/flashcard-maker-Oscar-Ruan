@@ -49,9 +49,7 @@ while x != "Exit":
             for cards in data:
                 print(cards["question"])
                 b = input("what is the answer? ")
+                y = input("continue?")
                 if b == (cards["answer"]):
                     print("correct")
                     play = play + 1
-                    y = input("continue?")
-        else:
-            break
