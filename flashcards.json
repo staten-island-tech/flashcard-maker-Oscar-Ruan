@@ -6,5 +6,9 @@
     {
         "question": "3+3",
         "answer": "6"
+    },
+    {
+        "question": "7+3",
+        "answer": "10"
     }
 ]
