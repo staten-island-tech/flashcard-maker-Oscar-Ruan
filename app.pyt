@@ -12,7 +12,6 @@ class Flashcards:
 
 if x == "Teacher":
     flash = Flashcards(input("Give me a word: "), input("Give me an answer: "))
-    x = input("What mode: ")
 
     try:
         with open("flashcards.json", "r") as file:
@@ -25,7 +24,7 @@ if x == "Teacher":
     with open("flashcards.json", "w") as file:
         json.dump(flashcard_data, file, indent=4)
 
-elif x =="Student":
+elif x == "Student":
     Flashcard = open("./flashcards.json", encoding="utf8")
     data = json.load(Flashcard)
     z = input("continue? ")
@@ -34,22 +33,25 @@ elif x =="Student":
         for i in data:
             print(i["question"])
             y = input("what is the answer?")
-            z = input("continue? ")
             if y == i["answer"]:
-                print(i["answer"])
+                print(f"The answer is {i["answer"]}")
                 print("correct")
                 points += 1
                 streak += 1
                 print(f"streak:{streak}")
+                print(f"points:{points}")
+                z = input("continue? ")
                 if streak >= 3:
                     points += 1
             else:
                 print(i["answer"])
                 streak = 0
                 print("wrong")
-                print(points)
-    else:
-        x = input("What mode: ")
+                print(f"points:{points}")
+                print(f"streak:{streak}")
+                z = input("continue? ")
+            if z == "no":
+                break
             
 else:
     print(":p")

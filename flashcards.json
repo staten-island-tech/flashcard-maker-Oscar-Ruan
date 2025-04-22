@@ -10,5 +10,17 @@
     {
         "question": "7+3",
         "answer": "10"
+    },
+    {
+        "question": "6+6",
+        "answer": "12"
+    },
+    {
+        "question": "127839 + 1",
+        "answer": "127840"
+    },
+    {
+        "question": "100+1",
+        "answer": "101"
     }
 ]
