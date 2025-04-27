@@ -22,5 +22,9 @@
     {
         "question": "100+1",
         "answer": "101"
+    },
+    {
+        "question": "5+5",
+        "answer": "10"
     }
 ]

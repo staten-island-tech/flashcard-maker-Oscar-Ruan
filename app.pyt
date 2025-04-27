@@ -1,14 +1,16 @@
 import json
+
 x = input("What mode: ")
 points = 0
 streak = 0
 
 class Flashcards:
     def __init__(self, question, answer):
-        self.question= question
-        self.answer= answer
+        self.question = question
+        self.answer = answer
+
     def to_dict(self):
-        return{"question": self.question, "answer": self.answer}
+        return {"question": self.question, "answer": self.answer}
 
 if x == "Teacher":
     flash = Flashcards(input("Give me a word: "), input("Give me an answer: "))
@@ -25,21 +27,22 @@ if x == "Teacher":
         json.dump(flashcard_data, file, indent=4)
 
 elif x == "Student":
-    Flashcard = open("./flashcards.json", encoding="utf8")
-    data = json.load(Flashcard)
+    with open("./flashcards.json", encoding="utf8") as Flashcard:
+        data = json.load(Flashcard)
+
     z = input("continue? ")
 
-    while z == ("yes"):
+    while z == "yes":
         for i in data:
             print(i["question"])
-            y = input("what is the answer?")
+            y = input("what is the answer? ")
             if y == i["answer"]:
-                print(f"The answer is {i["answer"]}")
+                print(f"The answer is {i['answer']}")
                 print("correct")
                 points += 1
                 streak += 1
-                print(f"streak:{streak}")
-                print(f"points:{points}")
+                print(f"streak: {streak}")
+                print(f"points: {points}")
                 z = input("continue? ")
                 if streak >= 3:
                     points += 1
@@ -47,11 +50,11 @@ elif x == "Student":
                 print(i["answer"])
                 streak = 0
                 print("wrong")
-                print(f"points:{points}")
-                print(f"streak:{streak}")
+                print(f"points: {points}")
+                print(f"streak: {streak}")
                 z = input("continue? ")
             if z == "no":
                 break
-            
+
 else:
     print(":p")
