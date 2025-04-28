@@ -54,4 +54,4 @@ elif x == "Student":
                 break
             
 else:
-    print(":p")
+    print("Only type Teacher or Student :p")
